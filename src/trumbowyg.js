@@ -897,9 +897,10 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
         // Build overlay for modal box
         buildOverlay: function () {
             var t = this;
+            var overlayParent = t.o.overlayParent ? $(t.$box).closest(t.o.overlayParent) : t.$box;
             t.$overlay = $('<div/>', {
                 class: t.o.prefix + 'overlay'
-            }).appendTo(t.$box);
+            }).appendTo(overlayParent);
             return t.$overlay;
         },
         showOverlay: function () {
